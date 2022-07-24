@@ -4,4 +4,8 @@ const add = function(a, b) {
 
 const subtract = (a, b) => a - b;
 
-console.log(subtract(40, 44))
+const multiply = (a, b) => a * b;
+
+const divide = (a, b) => a / b;
+
+
