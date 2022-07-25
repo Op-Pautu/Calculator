@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: grid;
+    grid-template: 2fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    height: 85vh;
+    width: 35vw;
+    gap: 8px 12px;
+  
+
+}
+
+
+.container > button {
+    border-radius: 0.125in;
+   
+}
+
+
+#space {
+    grid-column: 1 / span 4;
+}
+
+
+#clear {
+    grid-column: 1 / span 2;
+
+}
+
+#delete {
+    grid-column: 3 / span 2;
+}
