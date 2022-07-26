@@ -8,7 +8,7 @@ let haveDot = false;
 //selecting DOM
 const buttons = document.querySelectorAll('button');
 const numbers = document.querySelectorAll('#number');
-
+const tempResult = document.querySelector(".temp-result");
 const operators = document.querySelectorAll('#operator')
 const lastScreen = document.querySelector('.screen-last')
 const currentScreen = document.querySelector('.screen-current')
@@ -32,9 +32,7 @@ numbers.forEach(number => {
             return;
         }
         dis2Num += e.target.textContent;
-        currentScreen.textContent = dis2Num;
-
-        
+        currentScreen.textContent = dis2Num;   
     })
 });
 
@@ -43,18 +41,40 @@ operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
       if (!dis2Num) return;  
       haveDot = false;
-      const chooseOperation = e.target.textContent;
+      const operationName = e.target.textContent;
       if (dis1Num && dis2Num && lastOperation){
         operate();
       } else {
         result = parseFloat(dis2Num)
       }
+    clearVar(operationName);
+    lastOperation = operationName;
+    console.log(result);
+  });
+});
 
-        
-    })
-}) 
+function clearVar(name = "") {
+  dis1Num += dis2Num + " " + name + " ";
+  lastScreen.textContent = dis1Num;
+  currentScreen.textContent = "";
+  dis2Num = "";
+  tempResult.textContent = result;
+}
 
 
+function operate() {
+    if (lastOperation === "x") {
+      result = parseFloat(result) * parseFloat(dis2Num);
+    } else if (lastOperation === "+") {
+      result = parseFloat(result) + parseFloat(dis2Num);
+    } else if (lastOperation === "-") {
+      result = parseFloat(result) - parseFloat(dis2Num);
+    } else if (lastOperation === "/") {
+      result = parseFloat(result) / parseFloat(dis2Num);
+    } else if (lastOperation === "%") {
+      result = parseFloat(result) % parseFloat(dis2Num);
+    }
+  }
     
 
 // compute()
@@ -79,35 +99,34 @@ clear.addEventListener('click', () => {
 })
 
 
-const add = (a, b) => a + b;
+// const add = (a, b) => parseFloat(a) + parseFloat(b);
 
-const subtract = (a, b) => a - b;
+// const subtract = (a, b) => a - b;
 
-const multiply = (a, b) => a * b;
+// const multiply = (a, b) => a * b;
 
-const divide = (a, b) => a / b;
+// const divide = (a, b) => a / b;
 
 
-function operate(operator, a, b) {
+// function operate(lastOperation, a, b) {
     
-    let result = ""
-    switch(operator) {
-        case '+':
-            result = add(a, b);
-            break;
-        case '-':
-            result = subtract(a, b);
-            break;
-        case '*':
-            result = multiply(a, b);
-            break;
-        case '÷':
-            if (b === 0) result = null;
+    
+//     switch(lastOperation) {
+//         case '+':
+//             result += add(a, b);
+//             break;
+//         case '-':
+//             result = subtract(a, b);
+//             break;
+//         case '*':
+//             result = multiply(a, b);
+//             break;
+//         case '÷':
+//             if (b === 0) result = null;
      
-            result = divide(a, b);
-            break;
-        default: 
-            alert("invalid operator")
-    }
-    return result;
-}
+//             result = divide(a, b);
+//             break;
+        
+//     }
+//     return (result);
+// }
