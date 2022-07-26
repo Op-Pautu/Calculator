@@ -64,14 +64,11 @@ const del = document.querySelector('#delete')
       result = parseFloat(result) + parseFloat(dis2Num);
     } else if (lastOperation === "-") {
       result = parseFloat(result) - parseFloat(dis2Num);
-    } else if (lastOperation === "/") {
+    } else if (lastOperation === "÷") {
       result = parseFloat(result) / parseFloat(dis2Num);
-    } else if (lastOperation === "%") {
-      result = parseFloat(result) % parseFloat(dis2Num);
     }
-  }
  
-  
+}
   equal.addEventListener("click", () => {
     if (!dis2Num || !dis1Num) return;
     haveDot = false;
