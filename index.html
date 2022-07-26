@@ -8,43 +8,34 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div class="container">
-        
-        <button  id="space"></button id="number">
-        
-        <button id="clear">Clear</button id="number">
-        <button id="delete">Delete</button id="number">
-        <button id="number" class="7">7</button id="number">
-        <button id="number" class="8">8</button id="number">
-        <button id="number" class="9">9</button id="number">
-        <button id="operator" class="÷">÷</button id="number">
-        <button id="number" class="4">4</button id="number">
-        
-        <button id="number" class="5">5</button id="number">
-        <button id="number" class="6">6</button id="number">
-        <button id="operator" class="x">x</button id="number">
-        <button id="number" class="1">1</button id="number">
-        <button id="number" class="2">2</button id="number">
-        <button id="number" class="3">3</button id="number">
-        <button id="operator" class="-">-</button id="number">
-        <button id="number" class=".">.</button id="number">
-   
-        <button id="number" class="0">0</button id="number">  
-        <button id="operator" class="+">+</button id="number">
-        <button id="operator" class="=">=</button id="number">
-        
-        
-      
-        
-        
-    </div>
-
-
-
-
-
-
-
-     <script src="myScript.js"></script>
+    <main class="calc">
+        <div class="container">
+            
+            <div class="display">
+                <div class="screen-last" id="lastOperationScreen">0</div>
+                <div class="screen-current" id="currentOperationScreen"></div>
+            </div>
+            <button id="clear">Clear</button>
+            <button id="delete">Delete</button>
+            <button id="number" class="7">7</button>
+            <button id="number" class="8">8</button>
+            <button id="number" class="9">9</button>
+            <button id="operator" class="÷">÷</button>
+            <button id="number" class="4">4</button>
+            <button id="number" class="5">5</button>
+            <button id="number" class="6">6</button>
+            <button id="operator" class="x">x</button>
+            <button id="number" class="1">1</button>
+            <button id="number" class="2">2</button>
+            <button id="number" class="3">3</button>
+            <button id="operator" class="-">-</button>
+            <button id="number" class=".">.</button>
+            <button id="number" class="0">0</button> 
+            <button id="operator" class="+">+</button>
+            <button id="operator" class = "equal" class="=">=</button>
+          
+        </div>
+    </main>
+   <script src="myScript.js"></script>
 </body>
 </html>

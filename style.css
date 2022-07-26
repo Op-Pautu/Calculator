@@ -1,7 +1,12 @@
-body {
+
+
+
+.calc {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+  
 }
 .container {
     display: grid;
@@ -9,21 +14,36 @@ body {
     height: 85vh;
     width: 35vw;
     gap: 8px 12px;
-  
+    
 
 }
-
-
+.display {
+    padding: 10px 20px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+    background-color: rgba(14, 13, 13, 0.568);
+    color: white;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    grid-column: 1 / span 4;
+    font-size: 15px;
+  }
+  .screen-last {
+    min-height: 32px;
+    font-size: 20px;
+  }
+  
+  .screen-current {
+    min-height: 64px;
+    font-size: 40px;
+  }
 .container > button {
     border-radius: 0.125in;
    
 }
-
-
-#space {
-    grid-column: 1 / span 4;
-}
-
 
 #clear {
     grid-column: 1 / span 2;
