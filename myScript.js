@@ -52,7 +52,7 @@ const del = document.querySelector('#delete')
     display1.textContent = dis1Num;
     display2.textContent = "";
     dis2Num = "";
-    display2.textContent = result;
+    display2.textContent = Math.round(result * 1000) / 1000;
     
     // tempResult.textContent = result;
   }
